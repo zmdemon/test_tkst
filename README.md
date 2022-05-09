@@ -8,4 +8,4 @@ How to load:
         npm install
 2. Then in main folder in terminal:
 
-        run dev 
+        npm run dev 
