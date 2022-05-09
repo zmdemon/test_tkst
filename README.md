@@ -6,6 +6,6 @@ How to load:
 1. In main folder in terminal:
 
         npm install
-2. Thhen in main folder in terminal:
+2. Then in main folder in terminal:
 
         run dev 
