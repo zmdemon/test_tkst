@@ -1,43 +1,42 @@
 .contacts-layout-content {
-    min-height: 800px;
-    max-width: 1000px;
-    width: 100%;
-    padding: 24px;
-    background: #fff;
-    overflow: auto;
-    justify-content: flex-start;
-    align-items: flex-start;
-
+  min-height: 800px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 24px;
+  background: #fff;
+  overflow: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .contacts-layout-content > * {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .layout {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .contacts-page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    float: left;
-    width: 120px;
-    height: 31px;
-    margin: 16px 24px 16px 0;
-    background: rgba(255, 255, 255, 0.3);
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .ant-row-rtl .logo {
-    float: right;
-    margin: 16px 0 16px 24px;
+  float: right;
+  margin: 16px 0 16px 24px;
 }
 
-[data-theme="dark"] .site-layout-content {
-    background: #141414;
+[data-theme='dark'] .site-layout-content {
+  background: #141414;
 }

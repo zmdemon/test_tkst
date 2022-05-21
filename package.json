@@ -3,35 +3,63 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.0",
-    "@types/node": "^16.11.33",
-    "@types/react": "^18.0.8",
-    "@types/react-dom": "^18.0.3",
-    "antd": "^4.20.2",
-    "axios": "^0.27.2",
-    "concurrently": "^7.1.0",
-    "js-cookie": "^3.0.1",
-    "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-redux": "^7.2.6",
+    "react-redux": "^8.0.1",
+    "@reduxjs/toolkit": "^1.8.1",
+    "react": "^18.1.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "concurrently": "^7.2.0",
+    "axios": "^0.27.2",
+    "antd": "^4.20.5",
+    "js-cookie": "^3.0.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.2",
+    "@types/uuid": "^8.3.4",
+    "json-server": "^0.17.0",
+    "@babel/core": "^7.18.0",
+    "@babel/plugin-transform-runtime": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-react": "^7.17.12",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/runtime": "^7.18.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.6",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.16.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-config-prettier": "^8.5.0",
+
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "8",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "react-refresh": "^0.13.0",
+    "style-loader": "^3.3.1",
     "typescript": "^4.6.4",
-    "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "webpack-merge": "^5.8.0"
   },
   "scripts": {
-    "client": "react-scripts start",
-    "server1": "json-server --watch db.json --port 3004",
+    "client": "webpack serve --config webpack/webpack.config.js --env env=dev",
+    "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "server": "node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "eslintConfig": {
     "extends": [
@@ -51,9 +79,17 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@types/js-cookie": "^3.0.2",
-    "@types/uuid": "^8.3.4",
-    "json-server": "^0.17.0"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }

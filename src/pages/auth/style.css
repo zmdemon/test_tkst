@@ -1,21 +1,19 @@
 .site-layout-content {
-    height: 280px;
-    width: 500px;
-    padding: 24px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 280px;
+  width: 500px;
+  padding: 24px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.layout  {
-    min-height: 100vh;
-
+.layout {
+  min-height: 100vh;
 }
 .auth-page-content {
-        display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-

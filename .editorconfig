@@ -14,5 +14,7 @@ insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 tab_width = 2
+# spaces_around_brackets = both
+# ij_any_blank_lines_after_imports = 2
 
 
